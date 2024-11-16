@@ -1,0 +1,88 @@
+
+
+
+% theorems and proofs
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{assumption}[theorem]{Assumption}
+
+\newenvironment{proof}{\noindent{\bf Proof:} \hspace*{1mm}}{
+	\hspace*{\fill} $\Box$ }
+\newenvironment{proof_of}[1]{\noindent {\bf Proof of #1:}
+	\hspace*{1mm}}{\hspace*{\fill} $\Box$ }
+\newenvironment{proof_claim}{\begin{quotation} \noindent}{
+	\hspace*{\fill} $\diamond$ \end{quotation}}
+
+
+
+\newcommand{\heading}[6]{
+  \renewcommand{\thepage}{\arabic{page}}
+  \noindent
+  \begin{center}
+  \framebox{
+    \vbox{
+      \hbox to 5.78in {\textbf{#2} \hfill #3 }
+      \vspace{4mm}
+      \hbox to 5.78in {{\Large \hfill #6  \hfill} }
+      \vspace{2mm}
+      \hbox to 5.78in {{\bf #4} \hfill {\bf Collaborators:} #5}
+    }
+  }
+  \end{center}
+  \vspace*{4mm}
+}
+
+
+\newcommand{\lecturenotes}[4]{\heading{#1}{{\textcolor{blue}{8.372 Quantum Information Science III}}}{\textcolor{blue}{\textbf{#1}}}{#2}{#3}{#4}}
+
+
+% problem counters 
+\newcounter{problemnum}
+\newcommand{\theproblem}{Problem \arabic{problemnum}}
+\newenvironment{problems}{
+        \begin{list}{{\bf \theproblem. \hspace*{0.5em}}}
+        {\setlength{\leftmargin}{0em}
+         \setlength{\rightmargin}{0em}
+         \setlength{\labelwidth}{0em}
+         \setlength{\labelsep}{0em}
+         \usecounter{problemnum}}}{\end{list}}
+\makeatletter
+\newcommand{\problem}[1][{}]{\item \let\@currentlabel=\theproblem \textbf{#1}}
+\makeatother
+
+\newcounter{problempartnum}[problemnum]
+\newenvironment{problemparts}{
+        \begin{list}{{\bf (\alph{problempartnum})}}
+        {\setlength{\leftmargin}{2.5em}
+         \setlength{\rightmargin}{2.5em}
+         \setlength{\labelsep}{0.5em}}}{\end{list}}
+\newcommand{\problempart}{\addtocounter{problempartnum}{1}\item}
+
+% put in box 
+\newcommand{\putinbox}[1]{
+	\noindent\fbox{
+	\begin{minipage}{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}
+		#1
+	\end{minipage} %
+	}
+}
+
+\newcommand{\solution}[1]{
+  \noindent\newline
+  {
+    \putinbox{ {\bf \underline{Solution}}\newline
+        #1
+    }
+  }
+  \bigskip
+}
+
+
+
