@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1731730361.7155 "c:/Users/Louis Marquis/Documents/MIT/MIT Center for Theoretical Physics/Project H Algorithm/main.tex" "main.pdf" "main" 1731730363.68574 0
+["pdflatex"] 1731805423.23598 "c:/Users/Louis Marquis/Documents/MIT/MIT Center for Theoretical Physics/Project H Algorithm/main.tex" "main.pdf" "main" 1731805425.25205 0
   "C:/Users/Louis" 1726693344 18926 06549b4f9e867640d597b3a16002c932 ""
   "C:/Users/Louis Marquis/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1728678540 81760 910369822cd2d7c359b2482f4c0de4ca ""
   "C:/Users/Louis Marquis/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1726357653 24269186 c6d46cb9e6c793a7f4b8ce14fefcd863 ""
@@ -9,6 +9,7 @@
   "C:/Users/Louis Marquis/AppData/Local/Programs/MiKTeX/fonts/tfm/public/xypic/xybtip10.tfm" 1381022313 608 50246cc71b0635b0ba0a5c10a0bf4257 ""
   "C:/Users/Louis Marquis/AppData/Local/Programs/MiKTeX/fonts/tfm/public/xypic/xycirc10.tfm" 1381022313 844 3393210079fb4ed9347e214b3bfd7c1a ""
   "C:/Users/Louis Marquis/AppData/Local/Programs/MiKTeX/fonts/tfm/public/xypic/xydash10.tfm" 1381022313 984 5c01c46b93e3ba8369f3f8edc6e62aef ""
+  "C:/Users/Louis Marquis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1247596667 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "C:/Users/Louis Marquis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1247596667 35752 024fb6c41858982481f6968b5fc26508 ""
   "C:/Users/Louis Marquis/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "C:/Users/Louis Marquis/AppData/Local/Programs/MiKTeX/tex/generic/iftex/ifpdf.sty" 1643997108 480 5778104efadad304ced77548ca2184b1 ""
@@ -180,9 +181,9 @@
   "C:/Users/Louis Marquis/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "C:/Users/Louis Marquis/AppData/Local/Programs/MiKTeX/tex/latex/xpatch/xpatch.sty" 1585221260 8510 7803f78066c4f9d008405191a4b43073 ""
   "c:/Users/Louis" 1726693344 18926 06549b4f9e867640d597b3a16002c932 ""
-  "c:/Users/Louis Marquis/Documents/MIT/MIT Center for Theoretical Physics/Project H Algorithm/main.tex" 1731730358 519 3354fadc1d1a3c0d10f4df2bb1fe1c76 ""
-  "main.aux" 1731730363 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "main.tex" 1731730358 519 3354fadc1d1a3c0d10f4df2bb1fe1c76 ""
+  "c:/Users/Louis Marquis/Documents/MIT/MIT Center for Theoretical Physics/Project H Algorithm/main.tex" 1731805421 1089 92a25cac4a3706b4930e7c3bea80eaa7 ""
+  "main.aux" 1731805424 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "main.tex" 1731805421 1089 92a25cac4a3706b4930e7c3bea80eaa7 ""
   "preamble.tex" 1726381869 2329 9618f8c3608ebd089b537dde55ce172e ""
   (generated)
   "main.aux"
