@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.14)  16 NOV 2024 20:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.14)  19 NOV 2024 22:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -546,36 +546,56 @@ Local configuration file tkz-euclide.cfg found and used
 2024/04/19 5.10c tkz-obj-eu-show.tex
 ) (C:\Users\Louis Marquis\AppData\Local\Programs\MiKTeX\tex/latex/tkz-euclide/drawings\tkz-draw-eu-protractor.tex
 2024/04/19 5.10c tkz-obj-eu-protractor.tex
-)) (main.aux)
+)) (C:\Users\Louis Marquis\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\algpseudocode.sty
+Package: algpseudocode 
+ (C:\Users\Louis Marquis\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+) (C:\Users\Louis Marquis\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count320
+\c@ALG@rem=\count321
+\c@ALG@nested=\count322
+\ALG@tlm=\skip56
+\ALG@thistlm=\skip57
+\c@ALG@Lnr=\count323
+\c@ALG@blocknr=\count324
+\c@ALG@storecount=\count325
+\c@ALG@tmpcounter=\count326
+\ALG@tmplength=\skip58
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-Package xypdf Info: Line width: 0.39998pt on input line 22.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+Package xypdf Info: Line width: 0.39998pt on input line 23.
  (C:\Users\Louis Marquis\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count320
+\scratchcounter=\count327
 \scratchdimen=\dimen318
 \scratchbox=\box77
-\nofMPsegments=\count321
-\nofMParguments=\count322
+\nofMPsegments=\count328
+\nofMParguments=\count329
 \everyMPshowfont=\toks44
-\MPscratchCnt=\count323
+\MPscratchCnt=\count330
 \MPscratchDim=\dimen319
-\MPnumerator=\count324
-\makeMPintoPDFobject=\count325
+\MPnumerator=\count331
+\makeMPintoPDFobject=\count332
 \everyMPtoPDFconversion=\toks45
 ) (C:\Users\Louis Marquis\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -583,6 +603,10 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (C:\Users\Louis Marquis\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
+
+LaTeX Warning: No \author given.
+
+
 
 [1
 
@@ -593,17 +617,17 @@ L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 20857 strings out of 473898
- 447511 string characters out of 5722667
- 1928960 words of memory out of 5000000
- 43265 multiletter control sequences out of 15000+600000
- 559396 words of font info for 43 fonts, out of 8000000 for 9000
+ 21428 strings out of 473898
+ 456418 string characters out of 5722667
+ 1939960 words of memory out of 5000000
+ 43815 multiletter control sequences out of 15000+600000
+ 563710 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 119i,5n,123p,1517b,114s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/Louis Marquis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Louis Marquis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on main.pdf (1 page, 29713 bytes).
+ 119i,6n,123p,1517b,195s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/Louis Marquis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Louis Marquis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Louis Marquis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Louis Marquis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Louis Marquis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Louis Marquis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Louis Marquis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Louis Marquis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Louis Marquis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Louis Marquis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Louis Marquis/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on main.pdf (1 page, 124664 bytes).
 PDF statistics:
- 19 PDF objects out of 1000 (max. 8388607)
+ 64 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

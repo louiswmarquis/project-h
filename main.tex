@@ -6,6 +6,7 @@
 \usepackage{array}
 \usepackage{qcircuit}
 \usepackage{tkz-euclide}
+\usepackage{algpseudocode}
 
 \DeclareMathOperator{\Tr}{Tr}
 \DeclareMathOperator{\diag}{diag}
@@ -21,12 +22,35 @@
 
 \begin{document}
 
-Approximate Fermionic Hamiltonian Simulation for H-chains
+\title{Approximate Fermionic Hamiltonian Simulation for H-chains}
 
-Introduction
+\maketitle
+
+\section{Introduction}
 
 One of the most promising applications of quantum computing is in the field of quantum computational chemistry, which aims to efficiently simulate the behavior (i.e. Hamiltonian evolution) of chemical systems that are too complex for classical computers. The ability to computationally predict behavior of molecular systems would significantly benefit drug discovery efforts. This paper presents a sub-quadratic (in $n$) quantum algorithm to simulate the Hamiltonian evolution of the hydrogen chain, a benchmark chemical system in this field.
 
-Background
+\section{Algorithm}
+
+Denote $n$ as the number of hydrogen atoms. Since we're only dealing with 1s orbitals, this is also the number of orbitals. The electronic Hamiltonian has a form that can be separated into one-electron and two-electron components.
+
+\begin{equation}
+    H = H_1 + H_2 = \sum_{i, j} h_{ij}a_i^\dag a_j + \frac{1}{2}\sum_{i, j, k, l} h_{i, j, k, l} a_i^\dag a_j^\dag a_ka_l
+\end{equation}
+
+It is always the case that $H$ is symmetric between $i$ and $j$, between $k$ and $l$, and between $ij$ and $kl$. This means that the matrix $h_{i, j, k, l}$ can be eigendecomposed with eigenvalues $\{\lambda_r\}_{r \in [n^2]}$ (in descending order) and orthonormal eigenvectors $\{\ket{r}\}_{r \in [n^2]}$. Denote $L^r = \lambda_r \ket{r}\bra{r}$, which is symmetric.
+
+\begin{equation}
+    H_2 = \frac{1}{2}\sum_{r \in [n^2]} (\sum_{i, j \in [n]} L^r_{ij}a_i^\dag a_j)^2
+\end{equation}
+
+In the case of the H-chain, numerical results show that there is a significant drop between the $\lambda_n$ and $\lambda_{n + 1}$. That is, eigenvalues $n + 1$ and above are significantly smaller than the first $n$ eigenvalues. %Quantify later.
+In addition, for the H-chain, the $L^1, ..., L^r$ are all approximately diagonal. %Quantify approximation later.
+
+\begin{equation}
+    H_2 \approx \frac{1}{2}\sum_{r \in [n]} (\sum_{i \in [n]} L^r_{ii}a_i^\dag a_i)^2 = \frac{1}{2}\sum_{r \in [n]} (\sum_{i \in [n]} L^r_{ii}n_i)^2
+\end{equation}
+
+
 
 \end{document}
