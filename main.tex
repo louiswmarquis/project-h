@@ -51,6 +51,19 @@ In addition, for the H-chain, the $L^1, ..., L^r$ are all approximately diagonal
     H_2 \approx \frac{1}{2}\sum_{r \in [n]} (\sum_{i \in [n]} L^r_{ii}a_i^\dag a_i)^2 = \frac{1}{2}\sum_{r \in [n]} (\sum_{i \in [n]} L^r_{ii}n_i)^2
 \end{equation}
 
+The goal in Hamiltonian simulation is to approximately apply the operation $e^{-iHt}$ to an arbitrary state. If $H$ is a sum of Hermitian operations, then one can Trotterize the Hamiltonian.
+
+\begin{equation}
+    e^{-iHt} = (e^{-iH_1\frac{t}{M}}e^{-iH_2\frac{t}{M}})^{M} + O(\frac{t^2}{M})
+\end{equation}
+
+$H_1$ is made of $n^2$ terms, which can be grouped into $O(n^2)$ Hermitian terms, so $e^{-iH_1\frac{t}{M}}$ can be implemented in $O(n^2\frac{t}{M})$ complexity. This is not the focus of this project, but rather the more complex $H_2$.
+
+\begin{equation}
+    e^{-iH_2\frac{t}{M}} \approx e^{-\frac{it}{2M}\sum_{r \in [n]} (\sum_{i \in [n]} L^r_{ii}n_i)^2}
+\end{equation}
+
+We see that the eigenstates of $H_2$ are $\ket{x_1, ..., x_n}$ and their eigenvalues are a function $\frac{1}{2}\sum_{r \in [n]} (\sum_{i \in [n]} L^r_{ii}x_i)^2$ of $x_1, ..., x_n$. Therefore, $H_2$ is approximately the same as rotating each eigenstate at a particular frequency that is constant over time. To achieve this, the frequency can be calculated with quantum arithmetic on a separate register of qubits and used to control the rotation.
 
 
 \end{document}
