@@ -1,0 +1,93 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nty/global//global/global/global}
+  \entry{kahanamokumeyer2024fastquantumintegermultiplication}{misc}{}{}
+    \name{author}{2}{}{%
+      {{hash=KMGD}{%
+         family={Kahanamoku-Meyer},
+         familyi={K\bibinithyphendelim M\bibinitperiod},
+         given={Gregory\bibnamedelima D.},
+         giveni={G\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=YNY}{%
+         family={Yao},
+         familyi={Y\bibinitperiod},
+         given={Norman\bibnamedelima Y.},
+         giveni={N\bibinitperiod\bibinitdelim Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KMGDYNY1}
+    \strng{fullhash}{KMGDYNY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \verb{eprint}
+    \verb 2403.18006
+    \endverb
+    \field{title}{Fast quantum integer multiplication with zero ancillas}
+    \verb{url}
+    \verb https://arxiv.org/abs/2403.18006
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{quant-ph}
+    \field{year}{2024}
+  \endentry
+
+  \entry{Ruiz_Perez_2017}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=RPL}{%
+         family={Ruiz-Perez},
+         familyi={R\bibinithyphendelim P\bibinitperiod},
+         given={Lidia},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=GEJC}{%
+         family={Garcia-Escartin},
+         familyi={G\bibinithyphendelim E\bibinitperiod},
+         given={Juan\bibnamedelima Carlos},
+         giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{2}{%
+      {Springer Science}%
+      {Business Media LLC}%
+    }
+    \strng{namehash}{RPLGEJC1}
+    \strng{fullhash}{RPLGEJC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \verb{doi}
+    \verb 10.1007/s11128-017-1603-1
+    \endverb
+    \field{issn}{1573-1332}
+    \field{number}{6}
+    \field{title}{Quantum arithmetic with the quantum Fourier transform}
+    \verb{url}
+    \verb http://dx.doi.org/10.1007/s11128-017-1603-1
+    \endverb
+    \field{volume}{16}
+    \field{journaltitle}{Quantum Information Processing}
+    \field{month}{04}
+    \field{year}{2017}
+  \endentry
+\enddatalist
+\endinput

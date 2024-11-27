@@ -7,6 +7,7 @@
 \usepackage{qcircuit}
 \usepackage{tkz-euclide}
 \usepackage{algpseudocode}
+\usepackage[backend=bibtex,style=numeric]{biblatex}
 
 \DeclareMathOperator{\Tr}{Tr}
 \DeclareMathOperator{\diag}{diag}
@@ -18,11 +19,12 @@
 \setlength{\textwidth}{7in}
 \setlength{\topmargin}{-0.4in}
 \setlength{\textheight}{8.5in}
-
+\addbibresource{main.bib}
 
 \begin{document}
 
 \title{Approximate Fermionic Hamiltonian Simulation for H-chains}
+\author{Louis Marquis}
 
 \maketitle
 
@@ -51,7 +53,7 @@ In addition, for the H-chain, the $L^1, ..., L^r$ are all approximately diagonal
     H_2 \approx \frac{1}{2}\sum_{r \in [n]} (\sum_{i \in [n]} L^r_{ii}a_i^\dag a_i)^2 = \frac{1}{2}\sum_{r \in [n]} (\sum_{i \in [n]} L^r_{ii}n_i)^2
 \end{equation}
 
-The goal in Hamiltonian simulation is to approximately apply the operation $e^{-iHt}$ to an arbitrary state. If $H$ is a sum of Hermitian operations, then one can Trotterize the Hamiltonian.
+The goal in Hamiltonian simulation is to approximately apply the operation $e^{-iHt}$ to an arbitrary initial state $\ket{\psi}$. If $H$ is a sum of Hermitian operations, then one can Trotterize the Hamiltonian.
 
 \begin{equation}
     e^{-iHt} = (e^{-iH_1\frac{t}{M}}e^{-iH_2\frac{t}{M}})^{M} + O(\frac{t^2}{M})
@@ -65,5 +67,28 @@ $H_1$ is made of $n^2$ terms, which can be grouped into $O(n^2)$ Hermitian terms
 
 We see that the eigenstates of $H_2$ are $\ket{x_1, ..., x_n}$ and their eigenvalues are a function $\frac{1}{2}\sum_{r \in [n]} (\sum_{i \in [n]} L^r_{ii}x_i)^2$ of $x_1, ..., x_n$. Therefore, $H_2$ is approximately the same as rotating each eigenstate at a particular frequency that is constant over time. To achieve this, the frequency can be calculated with quantum arithmetic on a separate register of qubits and used to control the rotation.
 
+\Qcircuit @C=1em @R=1.6em {
+    \lstick{} & \ctrl{4} & \qw & \qw & \qw & \qw & \multigate{3}{e^{-i\frac{1}{2}}} & \multigate{3}{e^{-i\frac{2}{2}}} & \qw & \multigate{3}{e^{-i\frac{2^m}{2}}} & \qw\\
+    \lstick{} & \qw & \ctrl{3} & \qw & \qw & \qw & \ghost{e^{-i\frac{1}{2}}} & \ghost{e^{-i\frac{2}{2}}} & \qw & \ghost{e^{-i\frac{2^m}{2}}} & \qw \\
+    \lstick{} &  &  & \cdots &  & & \nghost{e^{-i\frac{1}{2}}} & \nghost{e^{-i\frac{2}{2}}} & & \nghost{e^{-i\frac{2^m}{2}Z}} & \\
+    \lstick{} & \qw & \qw & \qw & \ctrl{1} & \qw & \ghost{e^{-i\frac{1}{2}}} & \ghost{e^{-i\frac{2}{2}}} & \qw & \ghost{e^{-i\frac{2^m}{2}}} & \qw
+    \inputgroupv{1}{4}{.8em}{2.4em}{\ket{\psi}}\\
+    \lstick{} & \multigate{3}{+L^r_{11}} & \multigate{3}{+L^r_{22}} & \qw & \multigate{3}{+L^r_{nn}} & \multigate{3}{x \rightarrow x^2} & \ctrl{-1} & \qw & \qw & \qw & \qw\\
+    \lstick{} & \ghost{+L^r_{11}} & \ghost{+L^r_{22}} & \qw & \ghost{+L^r_{nn}} & \ghost{x \rightarrow x^2} & \qw & \ctrl{-2} & \qw & \qw & \qw \\
+    \lstick{} & \nghost{+L^r_{11}} & \nghost{+L^r_{22}} & \cdots & \nghost{+L^r_{nn}} & \nghost{x \rightarrow x^2} & & & & & \\
+    \lstick{} & \ghost{+L^r_{11}} & \ghost{+L^r_{22}} & \qw & \ghost{+L^r_{nn}} & \ghost{x \rightarrow x^2} & \qw & \qw & \qw & \ctrl{-4} & \qw 
+    \inputgroupv{5}{8}{.8em}{2.4em}{\ket{0^m}}
+}
+
+For each $i$, $+L_{ii}$ can be implemented via the QFT-based adder in \cite{Ruiz_Perez_2017}. Since $L_ii$ is classical, the controls in Fig 2 of \cite{Ruiz_Perez_2017} are unnecessary and whether each gate instead appears (or doesn't) can be determined classically. Instead, each gate has a control on the $i$th qubit of $\ket{\psi}$. Therefore, the complexity of such an adder is the same as that in the paper, which is $O(m^2)$. Having $n$ adders results in $O(nm^2)$.
+
+The squaring operation can be implemented via either the QFT-based multiplier in \cite{Ruiz_Perez_2017} or the method in \cite{kahanamokumeyer2024fastquantumintegermultiplication}. The former has $O(m^3)$ complexity. The latter is more appropriate for larger $m$ values, which may exceed the range that this algorithm demands. So we will assume the former for now. Note that to adapt to our use (squaring), one can copy the ancilla to a different ancilla register and apply the multiplier to a third ancilla register. This requires $2m$ additional ancilla bits. The strategy may be improved, but that's not the focus right now.
+
+It is assumed that a controlled phase shift gate can be implemented efficiently. In this case, the total complexity of the phase shifts at the end of the circuit is $O(nm)$, as there is one gate per ancilla qubit and per state qubit.
+
+Such a quantum circuit can be used to apply $e^{-(\sum_{i \in [n]} L^r_{ii}n_i)^2}$ in $O(nm^2 + m^3)$, which commutes for all $r$. Therefore, $e^{-\sum_{r \in [n]} (\sum_{i \in [n]} L^r_{ii}n_i)^2}$ can be implemented in $O(n^2m^2 + nm^3)$.
+
+
+\printbibliography
 
 \end{document}
